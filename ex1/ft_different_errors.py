@@ -8,7 +8,9 @@ def garden_operations(value, error, dic):
         except ValueError:
             print("Caught ValueError: invalid literal for int()\n")
 
-        """try to devide a normal number by the value to chack the ZeroDivisionError"""
+        """
+        try to devide normal number by the value to chack the ZeroDivisionErro
+        """
 
     elif error == ZeroDivisionError:
         try:
@@ -26,6 +28,7 @@ def garden_operations(value, error, dic):
     elif error == KeyError:
         try:
             a = dic[value]
+            a = a
         except KeyError:
             print(f"Caught KeyError: 'missing\\{value}'\n")
     else:
@@ -42,12 +45,13 @@ def test_error_types():
     garden_operations("missing.txt", FileNotFoundError, None)
     print("Testing KeyError...")
     garden = {
-        "name" : "Rose",
-        "age" : 20
+        "name": "Rose",
+        "age": 20
     }
     garden_operations("_plant", KeyError, garden)
     print("Testing multiple errors together...")
     garden_operations(None, None, None)
     print("All error types tested successfully!")
+
 
 test_error_types()
