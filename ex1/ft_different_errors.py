@@ -27,6 +27,7 @@ def garden_operations(value, error, dic):
         """try to access a value with a non exist key to catch the KeyError"""
     elif error == KeyError:
         try:
+            """try to put a non exists value in a variable"""
             a = dic[value]
             a = a
         except KeyError:
@@ -36,6 +37,7 @@ def garden_operations(value, error, dic):
 
 
 def test_error_types():
+    """test all the errors """
     print("=== Garden Error Types Demo ===\n")
     print("Testing ValueError...")
     garden_operations("abc", ValueError, None)

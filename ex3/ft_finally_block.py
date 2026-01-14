@@ -1,17 +1,20 @@
 def water_plants(plant_list):
     print("Opening watering system")
+    """TypeError when the plant is None"""
     try:
         for plant in plant_list:
             if plant is None:
-                "Watering " + plant
+                print("Watering " + plant)
             print(f"Watering {plant}")
     except TypeError:
+        """catch this error and print custom massage"""
         print("Error: Cannot water None - invalid plant!")
     finally:
         print("Closing watering system (cleanup)")
 
 
 def test_watering_system():
+    """test the function with all the cases"""
     print("=== Garden Watering System ===")
     print("\nTesting normal watering...")
     plants = ["tomato", "lettuce", "carrots"]
