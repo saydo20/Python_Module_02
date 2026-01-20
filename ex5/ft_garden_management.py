@@ -21,10 +21,10 @@ class GardenManager:
     the GardenManager class has a methods that
     add_plant, water_plants and check_plant_health
     """
-    def __init__(self):
+    def __init__(self) -> None:
         self.plants = []
 
-    def add_plant(self, plant):
+    def add_plant(self, plant: str) -> None:
         """if the plant_name is empty the method raise a PlantError"""
         try:
             if plant.name == "":
@@ -34,7 +34,7 @@ class GardenManager:
         except PlantError as Error:
             print(f"Error {Error}")
 
-    def water_plants(self):
+    def water_plants(self) -> None:
         """if the plant_name is None the method raise a PlantError"""
         print("Opening watering system")
         try:
@@ -47,7 +47,7 @@ class GardenManager:
         finally:
             print("Closing watering system (cleanup)")
 
-    def check_plant_health(self, plant, water, sun):
+    def check_plant_health(self, plant: str, water: int, sun: int) -> None:
         """check the health of the plant by check the watring and sun hours"""
         try:
             if water > 10:
@@ -68,7 +68,7 @@ class GardenManager:
             print(f"Error checking {plant}: {e}")
 
 
-def garden_recovery(water_in_chunk, wilting):
+def garden_recovery(water_in_chunk: int, wilting: int) -> None:
     """a function recovry if there is any problem"""
     try:
         if water_in_chunk < 50:
@@ -89,7 +89,7 @@ class Plant:
         self.sun = sun
 
 
-def test_garden_management():
+def test_garden_management() -> None:
     try:
         """use the function test_garden_management() to test all the cases"""
         tomato = Plant("tomato", 5, 8)

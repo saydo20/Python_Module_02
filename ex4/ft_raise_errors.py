@@ -1,4 +1,6 @@
-def check_plant_health(plant_name, water_level, sunlight_hours):
+def check_plant_health(
+        plant_name: str, water_level: int, sunlight_hours: int
+        ) -> str:
     try:
         """
         raise the ValueError and pass a custom massage depend on the value
@@ -24,7 +26,7 @@ def check_plant_health(plant_name, water_level, sunlight_hours):
         print(f"Error: {e}")
 
 
-def test_plant_checks():
+def test_plant_checks() -> None:
     try:
         """test the function with all the cases"""
         print("=== Garden Plant Health Checker ===")

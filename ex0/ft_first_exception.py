@@ -1,4 +1,4 @@
-def check_temperature(temp_str: str) -> None:
+def check_temperature(temp_str: str) -> int:
     """Handle the exceptions using try and except"""
     try:
         temp = int(temp_str)

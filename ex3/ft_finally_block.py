@@ -1,4 +1,4 @@
-def water_plants(plant_list):
+def water_plants(plant_list) -> None:
     print("Opening watering system")
     """TypeError when the plant is None"""
     try:
@@ -13,7 +13,7 @@ def water_plants(plant_list):
         print("Closing watering system (cleanup)")
 
 
-def test_watering_system():
+def test_watering_system() -> None:
     """test the function with all the cases"""
     try:
         print("=== Garden Watering System ===")
