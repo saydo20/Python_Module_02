@@ -30,10 +30,13 @@ def test_error_types() -> None:
         print("Caught ZeroDivisionError: division by zero")
     print("\nTesting FileNotFoundError...")
     try:
-        garden_operations(FileNotFoundError, "missing.txt")
-    except FileNotFoundError:
-        print("Caught FileNotFoundError: No such file 'missing.txt'")
-    print("\nTesting KeyError...")
+        try:
+            garden_operations(FileNotFoundError, "missing.txt")
+        except FileNotFoundError:
+            print("Caught FileNotFoundError: No such file 'missing.txt'")
+        print("\nTesting KeyError...")
+    except Exception as Error:
+        print(f"caught {Error}")
     try:
         garden_operations(KeyError, 9)
     except KeyError:

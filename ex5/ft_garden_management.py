@@ -27,10 +27,10 @@ class GardenManager:
     def add_plant(self, plant):
         """if the plant_name is empty the method raise a PlantError"""
         try:
-            if plant == "":
+            if plant.name == "":
                 raise PlantError("adding plant: Plant name cannot be empty!")
             self.plants = self.plants + [plant]
-            print(f"Added {plant} successfully")
+            print(f"Added {plant.name} successfully")
         except PlantError as Error:
             print(f"Error {Error}")
 
@@ -41,7 +41,7 @@ class GardenManager:
             for plant in self.plants:
                 if plant is None:
                     raise WaterError("Cannot water None - invalid plant!")
-                print(f"Watering {plant} - success")
+                print(f"Watering {plant.name} - success")
         except WaterError as Error:
             print(f"Error {Error}")
         finally:
@@ -82,16 +82,19 @@ def garden_recovery(water_in_chunk, wilting):
     print("System recovered and continuing...")
 
 
+class Plant:
+    def __init__(self, name: str, watring: int, sun: int):
+        self.name = name
+        self.watring = watring
+        self.sun = sun
+
+
 def test_garden_management():
     try:
         """use the function test_garden_management() to test all the cases"""
-        tomato = "tomato"
-        tomato_watring = 5
-        tomato_sun = 8
-        lettuce = "lettuce"
-        lettuce_watring = 15
-        lettuce_sun = 8
-        some = ""
+        tomato = Plant("tomato", 5, 8)
+        lettuce = Plant("lettuce", 15, 8)
+        some = Plant("", 10, 8)
         print("=== Garden Management System ===")
         print("\nAdding plants to garden...")
         manager = GardenManager()
@@ -101,8 +104,8 @@ def test_garden_management():
         print("\nWatering plants...")
         manager.water_plants()
         print("\nChecking plant health...")
-        manager.check_plant_health(tomato, tomato_watring, tomato_sun)
-        manager.check_plant_health(lettuce, lettuce_watring, lettuce_sun)
+        manager.check_plant_health(tomato.name, tomato.watring, tomato.sun)
+        manager.check_plant_health(lettuce.name, lettuce.watring, lettuce.sun)
         print("\nTesting error recovery...")
         garden_recovery(30, 8)
         print("\nGarden management system test complete!")

@@ -4,11 +4,11 @@ def water_plants(plant_list):
     try:
         for plant in plant_list:
             if plant is None:
-                print("Watering " + plant)
+                raise TypeError("Cannot water None - invalid plant!")
             print(f"Watering {plant}")
-    except TypeError:
+    except TypeError as Error:
         """catch this error and print custom massage"""
-        print("Error: Cannot water None - invalid plant!")
+        print(f"Error: {Error}")
     finally:
         print("Closing watering system (cleanup)")
 
