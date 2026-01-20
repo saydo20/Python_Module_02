@@ -15,15 +15,18 @@ def water_plants(plant_list):
 
 def test_watering_system():
     """test the function with all the cases"""
-    print("=== Garden Watering System ===")
-    print("\nTesting normal watering...")
-    plants = ["tomato", "lettuce", "carrots"]
-    water_plants(plants)
-    print("Watering completed successfully!")
-    plants = ["tomato", None, "carrots",]
-    print("\nTesting with error...")
-    water_plants(plants)
-    print("\nCleanup always happens, even with errors!")
+    try:
+        print("=== Garden Watering System ===")
+        print("\nTesting normal watering...")
+        plants = ["tomato", "lettuce", "carrots"]
+        water_plants(plants)
+        print("Watering completed successfully!")
+        plants = ["tomato", None, "carrots",]
+        print("\nTesting with error...")
+        water_plants(plants)
+        print("\nCleanup always happens, even with errors!")
+    except Exception:
+        print("\ninvalid!\n")
 
 
 test_watering_system()

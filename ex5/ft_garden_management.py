@@ -83,28 +83,31 @@ def garden_recovery(water_in_chunk, wilting):
 
 
 def test_garden_management():
-    """use the function test_garden_management() to test all the cases"""
-    tomato = "tomato"
-    tomato_watring = 5
-    tomato_sun = 8
-    lettuce = "lettuce"
-    lettuce_watring = 15
-    lettuce_sun = 8
-    some = ""
-    print("=== Garden Management System ===")
-    print("\nAdding plants to garden...")
-    manager = GardenManager()
-    manager.add_plant(tomato)
-    manager.add_plant(lettuce)
-    manager.add_plant(some)
-    print("\nWatering plants...")
-    manager.water_plants()
-    print("\nChecking plant health...")
-    manager.check_plant_health(tomato, tomato_watring, tomato_sun)
-    manager.check_plant_health(lettuce, lettuce_watring, lettuce_sun)
-    print("\nTesting error recovery...")
-    garden_recovery(30, 8)
-    print("\nGarden management system test complete!")
+    try:
+        """use the function test_garden_management() to test all the cases"""
+        tomato = "tomato"
+        tomato_watring = 5
+        tomato_sun = 8
+        lettuce = "lettuce"
+        lettuce_watring = 15
+        lettuce_sun = 8
+        some = ""
+        print("=== Garden Management System ===")
+        print("\nAdding plants to garden...")
+        manager = GardenManager()
+        manager.add_plant(tomato)
+        manager.add_plant(lettuce)
+        manager.add_plant(some)
+        print("\nWatering plants...")
+        manager.water_plants()
+        print("\nChecking plant health...")
+        manager.check_plant_health(tomato, tomato_watring, tomato_sun)
+        manager.check_plant_health(lettuce, lettuce_watring, lettuce_sun)
+        print("\nTesting error recovery...")
+        garden_recovery(30, 8)
+        print("\nGarden management system test complete!")
+    except Exception:
+        print("invalid!")
 
 
 test_garden_management()

@@ -25,17 +25,20 @@ def check_plant_health(plant_name, water_level, sunlight_hours):
 
 
 def test_plant_checks():
-    """test the function with all the cases"""
-    print("=== Garden Plant Health Checker ===")
-    print("\nTesting good values...")
-    print(check_plant_health("tomato", 2, 6))
-    print("\nTesting empty plant name...")
-    check_plant_health("", 4, 6)
-    print("\nTesting bad water level...")
-    check_plant_health("Carrot", 15, 8)
-    print("\nTesting bad sunlight hours...")
-    check_plant_health("Rose", 8, 0)
-    print("\nAll error raising tests completed!")
+    try:
+        """test the function with all the cases"""
+        print("=== Garden Plant Health Checker ===")
+        print("\nTesting good values...")
+        print(check_plant_health("tomato", 2, 6))
+        print("\nTesting empty plant name...")
+        check_plant_health("", 4, 6)
+        print("\nTesting bad water level...")
+        check_plant_health("Carrot", 15, 8)
+        print("\nTesting bad sunlight hours...")
+        check_plant_health("Rose", 8, 0)
+        print("\nAll error raising tests completed!")
+    except Exception:
+        print("\ninvalid!\n")
 
 
 test_plant_checks()
