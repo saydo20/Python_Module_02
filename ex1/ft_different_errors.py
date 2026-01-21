@@ -1,9 +1,7 @@
 def garden_operations(error: object, value: any) -> None:
     if error is ValueError:
         value = int(value)
-        value = value
     elif error is ZeroDivisionError:
-        value = 100
         value /= 0
     elif error is FileNotFoundError:
         open(value, "r")
@@ -11,7 +9,6 @@ def garden_operations(error: object, value: any) -> None:
         d = {"plant": "Rose", "age": 45}
         print(d[value])
     else:
-        value = value
         value += "abc"
         colors = ["red", "green", "blue"]
         colors[value]
