@@ -2,17 +2,17 @@
 
 
 class GardenError(Exception):
-    def __init__(self, message):
+    def __init__(self, message: str) -> None:
         super().__init__(message)
 
 
 class PlantError(GardenError):
-    def __init__(self, message):
+    def __init__(self, message: str) -> None:
         super().__init__(message)
 
 
 class WaterError(GardenError):
-    def __init__(self, message):
+    def __init__(self, message: str) -> None:
         super().__init__(message)
 
 
@@ -68,22 +68,19 @@ class GardenManager:
             print(f"Error checking {plant}: {e}")
 
 
-def garden_recovery(water_in_chunk: int, wilting: int) -> None:
+def garden_recovery(water_in_chunk: int) -> None:
     """a function recovry if there is any problem"""
     try:
         if water_in_chunk < 50:
             water_in_chunk = 100
             raise GardenError("GardenError: Not enough water in tank")
-        elif wilting > 12:
-            wilting = 10
-            raise WaterError("WaterError: The plant is wilting!")
     except Exception as Error:
         print(f"Caught {Error}")
     print("System recovered and continuing...")
 
 
 class Plant:
-    def __init__(self, name: str, watring: int, sun: int):
+    def __init__(self, name: str, watring: int, sun: int) -> None:
         self.name = name
         self.watring = watring
         self.sun = sun
@@ -107,7 +104,7 @@ def test_garden_management() -> None:
         manager.check_plant_health(tomato.name, tomato.watring, tomato.sun)
         manager.check_plant_health(lettuce.name, lettuce.watring, lettuce.sun)
         print("\nTesting error recovery...")
-        garden_recovery(30, 8)
+        garden_recovery(30)
         print("\nGarden management system test complete!")
     except Exception:
         print("invalid!")
