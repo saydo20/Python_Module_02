@@ -106,8 +106,8 @@ def test_garden_management() -> None:
         print("\nTesting error recovery...")
         garden_recovery(30)
         print("\nGarden management system test complete!")
-    except Exception:
-        print("invalid!")
+    except Exception as Error:
+        print(f"invalid : {Error}")
 
 
 test_garden_management()

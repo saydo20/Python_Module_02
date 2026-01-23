@@ -25,8 +25,8 @@ def test_watering_system() -> None:
         print("\nTesting with error...")
         water_plants(plants)
         print("\nCleanup always happens, even with errors!")
-    except Exception:
-        print("\ninvalid!\n")
+    except Exception as Error:
+        print(f"invalid: {Error}")
 
 
 test_watering_system()
