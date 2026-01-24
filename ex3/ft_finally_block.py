@@ -1,4 +1,4 @@
-def water_plants(plant_list) -> None:
+def water_plants(plant_list: list) -> None:
     print("Opening watering system")
     """TypeError when the plant is None"""
     try:
@@ -21,7 +21,7 @@ def test_watering_system() -> None:
         plants = ["tomato", "lettuce", "carrots"]
         water_plants(plants)
         print("Watering completed successfully!")
-        plants = ["tomato", None, "carrots",]
+        plants = ["tomato", None, "carrots"]
         print("\nTesting with error...")
         water_plants(plants)
         print("\nCleanup always happens, even with errors!")
