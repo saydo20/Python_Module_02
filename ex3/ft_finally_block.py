@@ -3,7 +3,7 @@ def water_plants(plant_list: list) -> None:
     """TypeError when the plant is None"""
     try:
         for plant in plant_list:
-            if plant is None:
+            if plant is None or plant == "":
                 raise TypeError("Cannot water None - invalid plant!")
             print(f"Watering {plant}")
     except TypeError as Error:

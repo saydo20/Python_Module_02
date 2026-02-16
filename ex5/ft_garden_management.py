@@ -27,10 +27,10 @@ class GardenManager:
     def add_plant(self, plant: str) -> None:
         """if the plant_name is empty the method raise a PlantError"""
         try:
-            if plant.name == "":
+            if plant == "":
                 raise PlantError("adding plant: Plant name cannot be empty!")
             self.plants = self.plants + [plant]
-            print(f"Added {plant.name} successfully")
+            print(f"Added {plant} successfully")
         except PlantError as Error:
             print(f"Error {Error}")
 
