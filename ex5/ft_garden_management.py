@@ -39,7 +39,7 @@ class GardenManager:
         print("Opening watering system")
         try:
             for plant in self.plants:
-                if plant is None:
+                if plant is None or plant == "":
                     raise WaterError("Cannot water None - invalid plant!")
                 print(f"Watering {plant.name} - success")
         except WaterError as Error:
